@@ -24,3 +24,10 @@ executable cabal-build-tool-depends-local
   build-depends:       base >=4.14 && <4.15
   -- hs-source-dirs:
   default-language:    Haskell2010
+
+test-suite cabal-build-tool-depends-local-test
+  type:                exitcode-stdio-1.0
+  main-is:             Spec.hs
+  build-depends:       base >=4.14 && <4.15, process
+  build-tool-depends:  cabal-build-tool-depends-local:cabal-build-tool-depends-local
+  default-language:    Haskell2010
